@@ -47,7 +47,7 @@ def create_code_exercise(section_title, part_title):
 section_title = "Section 1: NEW - Sptring Boot 3 Quick Start"
 # section_title = "coding-exercises"
 
-part_title = "2. How To Take This Course and How To Get Help"
+part_title = "3. Downloading the Source Code, PDFs and Course Links"
 
 prepare_resources(section_title, part_title)
 # create_code_exercise(section_title, part_title)
