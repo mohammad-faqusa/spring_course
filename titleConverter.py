@@ -47,7 +47,7 @@ def create_code_exercise(section_title, part_title):
 section_title = "Section 1: NEW - Sptring Boot 3 Quick Start"
 # section_title = "coding-exercises"
 
-part_title = "4. Java Development Environment Checkpoint"
+part_title = "5. Spring Boot Overview"
 
 prepare_resources(section_title, part_title)
 # create_code_exercise(section_title, part_title)
