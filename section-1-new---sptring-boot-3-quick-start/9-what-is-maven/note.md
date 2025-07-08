@@ -36,4 +36,4 @@ for example : Spring depend on commos logging
 
 - when you build and run app
 - maven handle class / build path
-- based on config files, maven will add JAR
+- based on config files, maven will add JAR files accordingly

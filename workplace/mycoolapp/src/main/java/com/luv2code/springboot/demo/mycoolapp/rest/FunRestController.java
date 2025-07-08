@@ -6,11 +6,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class FunRestController {
 
-    // expose "/" that return "Hello World"
-
     @GetMapping("/")
-    public String sayHello() {
+    public String getFun() {
         return "Hello World!";
     }
-
 }
