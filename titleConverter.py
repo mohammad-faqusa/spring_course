@@ -47,9 +47,8 @@ def create_code_exercise(section_title, part_title):
 section_title = "Section 1: NEW - Sptring Boot 3 Quick Start"
 # section_title = "coding-exercises"
 
-part_title = "12. Exploring Spring Boot Project Files - Part 1"
+part_title = "13. Exploring Spring Boot Project Files - Part 2"
+print(f"export PART_TITLE='{part_title}'")
 
 prepare_resources(section_title, part_title)
 # create_code_exercise(section_title, part_title)
-
-os.environ["PART_TITLE"] = part_title
