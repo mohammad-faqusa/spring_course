@@ -47,7 +47,7 @@ def create_code_exercise(section_title, part_title):
 section_title = "Section 1: NEW - Sptring Boot 3 Quick Start"
 # section_title = "coding-exercises"
 
-part_title = "25. Run Spring Boot apps from the Command Line - Microsoft Windows"
+part_title = "26. Run Spring Boot apps from the Command Line - macOS / Linux"
 print(f"export PART_TITLE='{part_title}'")
 
 prepare_resources(section_title, part_title)
