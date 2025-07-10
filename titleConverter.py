@@ -47,7 +47,7 @@ def create_code_exercise(section_title, part_title):
 section_title = "Section 1: NEW - Sptring Boot 3 Quick Start"
 # section_title = "coding-exercises"
 
-part_title = "27. Injecting Custom Application Properties - Overview"
+part_title = "28. Injecting Custom Application Properties - Coding"
 print(f"export PART_TITLE='{part_title}'")
 
 prepare_resources(section_title, part_title)
