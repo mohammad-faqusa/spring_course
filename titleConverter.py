@@ -44,10 +44,10 @@ def create_code_exercise(section_title, part_title):
     # print(part_directory_path)
     create_directory(part_directory_path)
 
-section_title = "Section 1: NEW - Sptring Boot 3 Quick Start"
+section_title = "Section 2:NEW - Spring Core"
 # section_title = "coding-exercises"
 
-part_title = "30. Configuring the Spring Boot Server - Coding"
+part_title = "31. What is Inversion of Control?"
 print(f"export PART_TITLE='{part_title}'")
 
 prepare_resources(section_title, part_title)
