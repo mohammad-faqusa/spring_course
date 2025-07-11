@@ -1,0 +1,25 @@
+.
+├── HELP.md
+├── mvnw
+├── mvnw.cmd
+├── pom.xml
+├── src
+│   ├── main
+│   │   ├── java
+│   │   └── resources
+│   └── test
+│       └── java
+├── target
+│   ├── classes
+│   │   ├── application.properties
+│   │   └── **com**
+│   ├── generated-sources
+│   │   └── annotations
+│   ├── generated-test-sources
+│   │   └── test-annotations
+│   └── test-classes
+│       └── com
+├── tree.md
+└── tree.txt
+
+16 directories, 7 files
