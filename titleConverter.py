@@ -23,6 +23,15 @@ def create_file(newpath, filename):
         with open(filepath, "x") as f:
             pass  # Or write initial content if needed
 
+import os
+
+def append_line(file_path: str, line: str) -> None:
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+
+    # open in append mode and write the line
+    with open(file_path, "a", encoding="utf-8") as f:
+        f.write(f"{line}\n")
+
 def move_files(source_dir, target_dir):
     file_names = os.listdir(source_dir)
     for file_name in file_names:
@@ -35,6 +44,8 @@ def prepare_resources(section_title, part_title):
     print(part_directory_path)
     create_directory(part_directory_path)
     create_file(part_directory_path, "note.md")
+    note_path = os.path.join(part_directory_path, "note.md")
+    append_line(note_path, f"## {part_title}")
     move_files("./downloads", part_directory_path)
 
 def create_code_exercise(section_title, part_title):
@@ -47,7 +58,7 @@ def create_code_exercise(section_title, part_title):
 section_title = "Section 2-NEW - Spring Core"
 # section_title = "coding-exercises"
 
-part_title = "50. Lazy Initialization - Coding - Part 1"
+part_title = "51. Lazy Initialization - Coding - Part 2"
 print(f"export PART_TITLE='{part_title }'")
 
 prepare_resources(section_title, part_title)
