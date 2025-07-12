@@ -47,8 +47,8 @@ def create_code_exercise(section_title, part_title):
 section_title = "Section 2-NEW - Spring Core"
 # section_title = "coding-exercises"
 
-part_title = "49. Lazy Initialization - Overview"
-print(f"export PART_TITLE='{part_title}'")
+part_title = "50. Lazy Initialization - Coding - Part 1"
+print(f"export PART_TITLE='{part_title }'")
 
 prepare_resources(section_title, part_title)
 # create_code_exercise(section_title, part_title)
