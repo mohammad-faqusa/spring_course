@@ -47,7 +47,7 @@ def create_code_exercise(section_title, part_title):
 section_title = "Section 2-NEW - Spring Core"
 # section_title = "coding-exercises"
 
-part_title = "43. Field Injection"
+part_title = "44. Qualifiers - Overview"
 print(f"export PART_TITLE='{part_title}'")
 
 prepare_resources(section_title, part_title)
