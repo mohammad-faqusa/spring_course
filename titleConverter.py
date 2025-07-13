@@ -58,7 +58,7 @@ def create_code_exercise(section_title, part_title):
 section_title = "Section 3: New - Hibernate/JPA CRUD "
 # section_title = "coding-exercises"
 
-part_title = "63. Setting Up Database Table - Overview"
+part_title = "64. Setting Up Database Table - Coding"
 print(f"export PART_TITLE='{part_title }'")
 
 prepare_resources(section_title, part_title)
