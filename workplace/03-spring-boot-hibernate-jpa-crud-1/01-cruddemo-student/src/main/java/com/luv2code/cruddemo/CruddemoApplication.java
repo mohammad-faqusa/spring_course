@@ -8,6 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
+import java.util.List;
+
 @SpringBootApplication
 public class CruddemoApplication {
 
@@ -19,7 +21,9 @@ public class CruddemoApplication {
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
 		return runner -> {
 //			createMultipleStudents(studentDAO);
-			readStudent(studentDAO);
+//			readStudent(studentDAO);
+//			queryStudents(studentDAO);
+			queryForFindByLastName(studentDAO);
 		};
 	}
 
@@ -51,6 +55,27 @@ public class CruddemoApplication {
 
 		System.out.println("Reading student with id " + studentId);
 
+	}
+
+	private void queryStudents(StudentDAO studentDAO) {
+
+		// get list of students
+		List<Student> students = studentDAO.findAll();
+
+
+		// print the list of students
+		for(Student student : students) {
+			System.out.println(student);
+		}
+	}
+
+	private void queryForFindByLastName(StudentDAO studentDAO) {
+		// get by last name
+		List<Student> students = studentDAO.findByLastName("drabea");
+		// print the result
+		for(Student student : students) {
+			System.out.println(student);
+		}
 	}
 
 }
