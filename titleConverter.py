@@ -55,10 +55,10 @@ def create_code_exercise(section_title, part_title):
     # print(part_directory_path)
     create_directory(part_directory_path)
 
-section_title = "Section 3: New - Hibernate/JPA CRUD "
+section_title = "Section 4: New - REST CRUD APIs"
 # section_title = "coding-exercises"
 
-part_title = "87. Create Database Tables from Java Code - Coding - Part 1"
+part_title = "89. What Are REST Services - Part 1"
 print(f"export PART_TITLE='{part_title }'")
 
 prepare_resources(section_title, part_title)

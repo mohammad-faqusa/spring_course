@@ -23,4 +23,5 @@ return runner -> {
    * in pgAdmin, drop the `student` table 
    * if you run the `SELECT` query , error generated 
 2. if your run the `spring app` again, error generated `sutdent table does not exist`
-3. 
+
+
