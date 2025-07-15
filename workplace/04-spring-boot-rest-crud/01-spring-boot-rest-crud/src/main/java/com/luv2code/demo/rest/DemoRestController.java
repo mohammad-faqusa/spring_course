@@ -1,4 +1,4 @@
-package com.luv2code.demo;
+package com.luv2code.demo.rest;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
