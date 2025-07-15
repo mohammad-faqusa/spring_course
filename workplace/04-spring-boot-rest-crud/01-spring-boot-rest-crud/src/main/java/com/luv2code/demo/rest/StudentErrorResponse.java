@@ -8,6 +8,12 @@ public class StudentErrorResponse {
 
     public StudentErrorResponse() {}
 
+    public StudentErrorResponse(int status, String message) {
+        this.status = status;
+        this.message = message;
+    }
+
+
     public StudentErrorResponse(int status, String message, long stamp) {
         this.status = status;
         this.message = message;
