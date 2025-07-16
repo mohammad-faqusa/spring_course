@@ -75,6 +75,18 @@ public class EmployeeRestController {
         return employeeDB;
     }
 
+    @DeleteMapping("/employees/{employeeId}")
+    public String deleteEmployee(@PathVariable int employeeId) {
+        Employee employeeDB = employeeService.findById(employeeId);
+        if(employeeDB == null){
+            throw new RuntimeException("Employee with id " + employeeId + " not found");
+        }
+
+        employeeService.deleteById(employeeId);
+
+        return "The employee with id : " +  employeeId + " has been deleted\n" + employeeDB ;
+    }
+
     private Employee apply(Map<String, Object> patchPayLoad, Employee tempEmployee) {
         // convert tempEmployee to Object Node (JSON)
         ObjectNode employeeNode = objectMapper.convertValue(tempEmployee, ObjectNode.class);

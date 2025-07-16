@@ -42,5 +42,6 @@ public class EmployeeDAOJpaImpl implements EmployeeDAO {
     @Override
     public void deleteById(int theId) {
 
+        entityManager.remove(entityManager.find(Employee.class, theId));
     }
 }
