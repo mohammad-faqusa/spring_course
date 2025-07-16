@@ -58,7 +58,7 @@ def create_code_exercise(section_title, part_title):
 section_title = "Section 4: New - REST CRUD APIs"
 # section_title = "coding-exercises"
 
-part_title = "130. Spring Boot REST: PATCH - Overview - Part 2"
+part_title = "131. Spring Boot REST: PATCH - Coding - Part 1"
 print(f"export PART_TITLE='{part_title }'")
 
 prepare_resources(section_title, part_title)
