@@ -26,4 +26,19 @@ public class EmployeeDAOJpaImpl implements EmployeeDAO {
         // return the results
         return employees;
     }
+
+    @Override
+    public Employee findById(int theId) {
+        return null;
+    }
+
+    @Override
+    public Employee save(Employee theEmployee) {
+        return null;
+    }
+
+    @Override
+    public void deleteById(int theId) {
+
+    }
 }
