@@ -55,10 +55,10 @@ def create_code_exercise(section_title, part_title):
     # print(part_directory_path)
     create_directory(part_directory_path)
 
-section_title = "Section 4: New - REST CRUD APIs"
+section_title = "Section 5: New - REST API Security"
 # section_title = "coding-exercises"
 
-part_title = "148. Spring Boot REST: Using Swagger with Spring Data REST"
+part_title = "149. Spring Boot REST API Security Overview"
 print(f"export PART_TITLE='{part_title }'")
 
 prepare_resources(section_title, part_title)
