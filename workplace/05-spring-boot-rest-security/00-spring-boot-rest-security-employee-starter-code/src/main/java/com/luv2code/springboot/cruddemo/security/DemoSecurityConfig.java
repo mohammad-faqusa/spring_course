@@ -25,6 +25,7 @@ public class DemoSecurityConfig {
                 .password("{noop}mery123")
                 .roles("EMPLOYEE", "MANAGER")
                 .build();
+
         UserDetails susan = User.builder()
                 .username("susan")
                 .password("{noop}susan123")
@@ -35,24 +36,23 @@ public class DemoSecurityConfig {
     }
 
     @Bean
-    public SecurityFilterChain securityFilterChain (HttpSecurity http) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
-        // authorization
-        http.authorizeHttpRequests(configurer -> {
-            configurer
-                    .requestMatchers(HttpMethod.GET , "/api/employees" ).hasRole("EMPLOYEE")
-                    .requestMatchers(HttpMethod.GET , "/api/employees/**" ).hasRole("EMPLOYEE")
-                    .requestMatchers(HttpMethod.POST , "/api/employees" ).hasRole("MANAGER")
-                    .requestMatchers(HttpMethod.PUT , "/api/employees" ).hasRole("MANAGER")
-                    .requestMatchers(HttpMethod.DELETE , "/api/employees" ).hasRole("ADMIN");
-        });
-
-        // define basic authintication
-        http.httpBasic(Customizer.withDefaults());
-
-        // disable csrf
-        http.csrf(csrf -> csrf.disable());
+        http
+                .authorizeHttpRequests(configurer -> {
+                    configurer
+                            .requestMatchers(HttpMethod.GET , "/api/employees").hasRole("EMPLOYEE")
+                            .requestMatchers(HttpMethod.GET , "/api/employees/**").hasRole("EMPLOYEE")
+                            .requestMatchers(HttpMethod.POST , "/api/employees").hasRole("MANAGER")
+                            .requestMatchers(HttpMethod.POST , "/api/employees/").hasRole("MANAGER") // just in case
+                            .requestMatchers(HttpMethod.PUT , "/api/employees").hasRole("MANAGER")
+                            .requestMatchers(HttpMethod.DELETE , "/api/employees/**").hasRole("ADMIN")
+                            .anyRequest().authenticated();
+                })
+                .httpBasic(Customizer.withDefaults())
+                .csrf(csrf -> csrf.disable());
 
         return http.build();
     }
+
 }
