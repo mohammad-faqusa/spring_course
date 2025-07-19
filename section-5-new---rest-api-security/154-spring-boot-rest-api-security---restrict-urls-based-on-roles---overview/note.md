@@ -66,4 +66,24 @@ public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
 ### Put It Together 
  
-
+```java
+@Bean 
+public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+    httt.authorizeHttpRequests(configurer -> {
+        configurer
+                .requestMatcher(HttpMethod.GET , "api/employees").hasRole("EMPLOYEE")
+                .requestMatcher(HttpMethod.GET , "api/employees/**").hasRole("EMPLOYEE")
+                .requestMatcher(HttpMethod.POST , "api/employees").hasRole("MANAGER")
+                .requestMatcher(HttpMethod.PUT , "api/employees").hasRole("MANAGER")
+                .requestMatcher(HttpMethod.PATCH , "api/employees/**").hasRole("ADMIN"); 
+                
+    }); 
+    
+    http.httpBasic(Customer.withDefaults()); 
+    
+    // disable Cros Site REquest frogery 
+    http.csrf(csrf -> csrf.disable()); 
+    
+    return http.build() ;
+}
+```
