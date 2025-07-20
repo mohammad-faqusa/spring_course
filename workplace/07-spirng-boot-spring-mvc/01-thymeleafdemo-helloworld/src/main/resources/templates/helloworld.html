@@ -4,9 +4,10 @@
 
     <head>
         <title>thymeleaf</title>
+        <link rel="stylesheet" th:href="@{css/demo.css}">
     </head>
 
     <body>
-        <p th:text="'The time current is : ' +  ${theDate}"/>
+        <p th:text="'The time current is : ' +  ${theDate}" class="family"/>
     </body>
 </html>
