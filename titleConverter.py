@@ -58,7 +58,7 @@ def create_code_exercise(section_title, part_title):
 section_title = "Section 5: New - Spring MVC"
 # section_title = "coding-exercises"
 
-part_title = "173. Spring Boot - Spring MVC with Thymeleaf - Overview"
+part_title = "174. Spring Boot - Spring MVC with Thymeleaf - Coding - Part 1"
 print(f"export PART_TITLE='{part_title }'")
 
 prepare_resources(section_title, part_title)
