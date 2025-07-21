@@ -4,11 +4,10 @@
 
     <head>
         <title>thymeleaf</title>
+        <link rel="stylesheet" th:href="@{css/demo.css}">
     </head>
 
     <body>
-    Hello form spring !
-    <br>
-    welcome <span th:text="${param.studentName}"/>
+        <p th:text="'The time current is : ' +  ${theDate}" class="family"/>
     </body>
 </html>
