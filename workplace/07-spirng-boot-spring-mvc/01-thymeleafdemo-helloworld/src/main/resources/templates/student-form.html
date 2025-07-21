@@ -13,7 +13,16 @@
             First Name : <input type="text" th:field="*{firstName}"/>
             Last Name : <input type="text" th:field="*{lastName}"/>
 
+            <br><br>
+
+            Student :
+            <select th:field="*{country}">
+                <option value="palestine">palestine</option>
+                <option value="jordan">jordan</option>
+            </select>
+
             <input type="submit" value="Submit"/>
+
         </form>
     </body>
 </html>
