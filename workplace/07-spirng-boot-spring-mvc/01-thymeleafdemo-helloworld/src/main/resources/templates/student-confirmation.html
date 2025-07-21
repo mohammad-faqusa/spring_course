@@ -8,6 +8,7 @@
 <body>
 <h3>Student Form Registration</h3>
 
-Hello <span th:text="${student}"/>
+Hello <span th:text="${student.firstName} + ' ' + ${student.lastName}"/>
 </body>
 </html>
+

@@ -28,7 +28,7 @@ public class StudentController {
 
         System.out.println(theStudent);
 
-        model.addAttribute("student",theStudent.toString());
+        model.addAttribute("student",theStudent);
 
         return "student-confirmation";
     }
