@@ -23,6 +23,13 @@
                 </option>
             </select>
 
+            <br><br>
+
+            Language :
+            <input type="radio" th:field="*{favoriteLanguage}" th:value="Java" th:text="Java"/>
+            <input type="radio" th:field="*{favoriteLanguage}" th:value="Python" th:text="Python"/>
+            <input type="radio" th:field="*{favoriteLanguage}" th:value="Go" th:text="Go"/>
+
             <input type="submit" value="Submit"/>
 
         </form>
