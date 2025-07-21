@@ -1,14 +1,20 @@
 package com.lu2code.springboot.thymeleafdemo.controller;
 
 import com.lu2code.springboot.thymeleafdemo.model.Student;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
+
 @Controller
 public class StudentController {
+
+    @Value("#{'${countries}'.split(',')}")
+    private List<String> countries;
 
     @GetMapping("/showStudentForm")
     public String showStudentForm(Model model) {
@@ -18,6 +24,7 @@ public class StudentController {
 
         // add the student to model
         model.addAttribute("student",theStudent);
+        model.addAttribute("countries",countries);
 
         // return the tamplate
         return "student-form";

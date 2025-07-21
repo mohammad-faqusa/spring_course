@@ -17,8 +17,10 @@
 
             Student :
             <select th:field="*{country}">
-                <option value="palestine">palestine</option>
-                <option value="jordan">jordan</option>
+                <option th:each="tempCountry : ${countries}"
+                        th:value="${tempCountry}"
+                        th:text="${tempCountry}">
+                </option>
             </select>
 
             <input type="submit" value="Submit"/>
