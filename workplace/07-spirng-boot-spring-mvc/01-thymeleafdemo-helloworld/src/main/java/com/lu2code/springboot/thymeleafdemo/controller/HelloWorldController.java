@@ -18,12 +18,12 @@ public class HelloWorldController {
         return "helloworld";
     }
 
-    @RequestMapping("/showFormVersionTwo")
+    @RequestMapping("/processFormVersionTwo")
     public String showFormVersionTwo(HttpServletRequest request, Model model) {
 
         // read the request parameter from HTML form
-        String theName = request.getParameter("theName");
-
+        String theName = request.getParameter("studentName");
+        System.out.println(theName);
         // convert data to upper case
         theName = theName.toUpperCase();
 
