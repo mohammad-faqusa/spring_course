@@ -13,8 +13,11 @@ import java.util.List;
 @Controller
 public class StudentController {
 
-    @Value("#{'${countries}'.split(',')}")
+    @Value("${countries}")
     private List<String> countries;
+
+    @Value("${languages}")
+    private List<String> languages;
 
     @GetMapping("/showStudentForm")
     public String showStudentForm(Model model) {
@@ -25,6 +28,7 @@ public class StudentController {
         // add the student to model
         model.addAttribute("student",theStudent);
         model.addAttribute("countries",countries);
+        model.addAttribute("languages",languages);
 
         // return the tamplate
         return "student-form";
