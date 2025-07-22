@@ -16,15 +16,15 @@
 <i>The fields ends with (*) : are required fields</i>
 <br><br>
 <!-- Example of a form -->
-<form th:action="@{/processFrom}" th:object="customer" method="post">
+<form th:action="@{/processFrom}" th:object="${customer}" method="post">
     First name: <input type="text" th:field="*{firstName}" />
     <br><br>
     Last name (*): <input type="text" th:field="*{lastName}" />
-    <br><br>
 
     <span th:if"${#fields.hasError('lastName')}"
-            th:errors="*{lastName}"
-            class="error"></span>
+    th:errors="*{lastName}"
+    class="error"></span>
+    <br><br>
 
     <input type="submit" value="Submit"/>
 
