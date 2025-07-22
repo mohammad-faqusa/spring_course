@@ -30,6 +30,14 @@
     <span th:if"${#fields.hasError('lastName')}"
     th:errors="*{freePasses}"
     class="error"></span>
+    <br><br>
+
+    Postal code : <input type="text" th:field="*{postalCode}" />
+    <span th:if"${#fields.hasError('postalCode')}"
+    th:errors="*{postalCode}"
+    class="error"></span>
+    <br><br>
+
 
     <input type="submit" value="Submit"/>
 
