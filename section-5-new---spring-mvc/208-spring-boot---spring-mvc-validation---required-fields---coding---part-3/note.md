@@ -31,7 +31,7 @@ customer-form.html
 
 <!--    add error message (if presenet) -->
     <span th:if"${#fields.hasError('lastName')}"
-          th:errors="*{lastName}"
+          th:errors="*{lastName}"   
           class="error"></span>
     
     <br><br>

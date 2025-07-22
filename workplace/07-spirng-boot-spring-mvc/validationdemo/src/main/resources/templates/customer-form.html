@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Cusotmer Registration</title>
+
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
 </head>
 <body>
 
@@ -15,6 +21,10 @@
     <br><br>
     Last name (*): <input type="text" th:field="*{lastName}" />
     <br><br>
+
+    <span th:if"${#fields.hasError('lastName')}"
+            th:errors="*{lastName}"
+            class="error"></span>
 
     <input type="submit" value="Submit"/>
 
