@@ -33,6 +33,13 @@
 
             <input type="submit" value="Submit"/>
 
+            <br><br>
+
+            Favorite Operating Systems :
+            <input type="checkbox" th:field="*{favoriteSystems}" th:value="Linux">Linux</input>
+            <input type="checkbox" th:field="*{favoriteSystems}" th:value="Mac">Mac</input>
+            <input type="checkbox" th:field="*{favoriteSystems}" th:value="'Microsoft Windows'">Microsoft Windows</input>
+
         </form>
     </body>
 </html>
