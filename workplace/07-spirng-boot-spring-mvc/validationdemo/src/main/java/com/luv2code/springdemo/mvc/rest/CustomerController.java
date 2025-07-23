@@ -39,7 +39,7 @@ public class CustomerController {
             return "customer-form";
         }
         else {
-            return "customer-confirmation";
+            return "customer-confirmation"  ;
         }
     }
 }
