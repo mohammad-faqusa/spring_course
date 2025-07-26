@@ -1,6 +1,17 @@
+## 225. Spring Boot - Spring MVC Validation - Custom Validation - Coding - Part 4
+
+### Development Process
+1. Create Custom validation rule 
+2. Add validation rule to Customer class 
+3. Display error message on HTML form 
+4. Update confirmation page 
+
+
+#### Step 2: Add validation rule to Customer class 
+* open the `Customer` class 
+```java
 package com.luv2code.springdemo.mvc.model;
 
-import com.luv2code.springdemo.mvc.validation.CourseCode;
 import jakarta.validation.constraints.*;
 
 public class Customer {
@@ -19,10 +30,10 @@ public class Customer {
 
     @Pattern(regexp="^[a-zA-Z0-9]{5}", message="must be a word of 5 letters/digits")
     private String postalCode;
-
-    @CourseCode
+    
+    @CourseCode // no need to pass in parameters, it is written in default parameters 
     private String courseCode;
-
+    // generate getters/setters 
 
     public String getFirstName() {
         return firstName;
@@ -72,3 +83,11 @@ public class Customer {
                 '}';
     }
 }
+
+
+```
+
+* now go `Customer Form`, and add `Course Code` field 
+  * just copy and paste from previous fields 
+* add the field `Course Code` in `Customer Confirmation` page 
+

@@ -7,18 +7,11 @@ public class CourseCodeConstraintValidation implements ConstraintValidator<Cours
 
     private String coursePrefix;
 
-    // use the IDE to generate the implemented methods
-
-
-    @Override
-    public boolean isValid(String theCode, ConstraintValidatorContext constraintValidatorContext) {
-        boolean result = theCode.startsWith(coursePrefix);
-
-        return false;
+    public void initialize(CourseCode constraintAnnotation) {
+        coursePrefix = constraintAnnotation.value();
     }
 
-    @Override
-    public void initialize(CourseCode theCourseCode) {
-        coursePrefix =  theCourseCode.value();
+    public boolean isValid(String theCode, ConstraintValidatorContext context) {
+        return theCode != null && theCode.startsWith(coursePrefix) && theCode.length() > coursePrefix.length();
     }
 }
