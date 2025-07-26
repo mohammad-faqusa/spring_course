@@ -22,7 +22,7 @@ public class CourseCodeConstraintValidator
     public boolean isValid(Stirng theCode, ContraintValidatorContext contraintValidatorContext) {
         boolean result = theCode.startsWith(coursePrefix); 
         
-        return false; 
+        return result; 
     }
     
 }

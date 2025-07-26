@@ -55,7 +55,7 @@ def create_code_exercise(section_title, part_title):
     # print(part_directory_path)
     create_directory(part_directory_path)
 
-section_title = "Section 5: New - Spring MVC"
+section_title = "Section 6: New - Spring MVC"
 # section_title = "coding-exercises"
 
 part_title = "224. Spring Boot - Spring MVC Validation - Custom Validation - Coding - Part 3"
