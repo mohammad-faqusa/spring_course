@@ -20,7 +20,7 @@ public class Customer {
     @Pattern(regexp="^[a-zA-Z0-9]{5}", message="must be a word of 5 letters/digits")
     private String postalCode;
 
-    @CourseCode
+    @CourseCode(value="PAL", message="The value must start with PAL")
     private String courseCode;
 
 
