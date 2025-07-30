@@ -55,10 +55,10 @@ def create_code_exercise(section_title, part_title):
     # print(part_directory_path)
     create_directory(part_directory_path)
 
-section_title = "Section 7: New - Spring MVC CRUD"
+section_title = "Section 8: New - Spring MVC Security"
 # section_title = "coding-exercises"
 
-part_title = "240. CRUD Database Project - Delete Employee - Coding"
+part_title = "242. Spring MVC Security - Demo"
 print(f"export PART_TITLE='{part_title }'")
 
 prepare_resources(section_title, part_title)
