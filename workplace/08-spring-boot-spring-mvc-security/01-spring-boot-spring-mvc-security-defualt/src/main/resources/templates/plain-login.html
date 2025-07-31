@@ -9,6 +9,9 @@
 <h3>This is Custom Login Page</h3>
 
 <!-- Example of a form -->
+<div th:if="${param.error}">
+    invalid username and password
+</div>
 <form th:action="@{/authenticateTheUser}" method="post">
     <p>
         Username: <input type="text" name="username" />
