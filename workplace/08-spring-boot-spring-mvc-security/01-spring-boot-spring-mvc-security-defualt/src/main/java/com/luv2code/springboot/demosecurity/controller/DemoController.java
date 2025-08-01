@@ -21,5 +21,11 @@ public class DemoController {
         return "systems";
     }
 
+    @GetMapping("/access-denied")
+    public String showAccessDenied() {
+        return "access-denied";
+    }
+
+
 
 }
