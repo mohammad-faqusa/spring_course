@@ -23,6 +23,11 @@ Roles : <span sec:authentication="principal.authorities"></span>
     (This is for Managers)
 
 </p>
+<p>
+    <a href="" th:href="@{/systems}">Systems</a>
+    (This is for Admins)
+
+</p>
 
 <form action="#" th:action="@{/logout}" method="POST">
     <input type="submit" value="Logout">
