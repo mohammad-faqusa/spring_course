@@ -1,33 +1,38 @@
+## 275. Spring MVC Security - JDBC Authentication - Plain Text - Coding - Part 3
+
+#### Update Spring Security Configuration to use JDBC 
+
+1. move to `DemoSecurityConfig`
+```java
 package com.luv2code.springboot.demosecurity.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.provisioning.JdbcUserDetailsManager;
-import org.springframework.security.provisioning.UserDetailsManager;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
-
-import javax.sql.DataSource;
 
 @Configuration
 public class DemoSecurityConfig {
-
-    // add support for JDBC ... no more hardcoded users :-)
-
+    
+    // add support for JDBC ... no more hardcoded users :-) 
+    
     @Bean
     public UserDetailsManager userDetailsManager(DataSource dataSource) {
-
-        return new JdbcUserDetailsManager(dataSource);
+        
+        return new JdbcUserDetailsManager(dataSource); 
     }
-
+    
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/").hasRole("EMPLOYEE")
-                        .requestMatchers("leaders/**").hasRole("MANAGER")
-                        .requestMatchers("systems/**").hasRole("ADMIN")
-                        .anyRequest()
-                        .authenticated())
+                .requestMatchers("/").hasRole("EMPLOYEE")
+                .requestMatchers("leaders/**").hasRole("MANAGER")
+                .requestMatchers("systems/**").hasRole("ADMIN")
+                .anyRequest()
+                .authenticated())
                 .formLogin(form ->
                         form.loginPage("/showLoginPage")
                                 .loginProcessingUrl("/authenticateTheUser")
@@ -36,7 +41,7 @@ public class DemoSecurityConfig {
                 .exceptionHandling(exception -> exception.accessDeniedPage("/access-denied"));
         return http.build();
     }
-
+    
     /*
     @Bean
     public InMemoryUserDetailsManager inMemoryUserDetailsManager() {
@@ -64,3 +69,5 @@ public class DemoSecurityConfig {
     }
 */
 }
+
+```
