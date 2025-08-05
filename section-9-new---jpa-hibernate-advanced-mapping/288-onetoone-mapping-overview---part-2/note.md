@@ -84,6 +84,12 @@ public class Instructor {
 * **stale data** : having different data in memory from the db 
 * ![img.png](img.png)
 
+
+### Cascade : 
+* Recall: You can cascade operations 
+* Apply the same operation to related entities 
+* ![img_1.png](img_1.png)
+
 In Hibernate (and JPA), the **entity lifecycle** refers to the various **states** an entity instance can go through during its interaction with the **persistence context** and the **database**.
 
 There are **4 main states** in the entity lifecycle:
@@ -165,3 +171,102 @@ session.remove(user); // Marked for removal
 ---
 
 Let me know if you'd like code examples or want to test the lifecycle in a small project.
+
+### cascade : 
+In Hibernate (and JPA), **cascade** refers to the automatic **propagation of operations** (like `persist`, `merge`, `remove`, etc.) from a **parent entity to its related child entities**.
+
+---
+
+### ✅ Why Cascade?
+
+When two entities have a **relationship** (e.g., `@OneToMany`, `@ManyToOne`, etc.), you might want to **automatically apply certain actions** to the child entity when performing that action on the parent.
+
+---
+
+### ✅ Common Cascade Types
+
+Hibernate supports these **cascade types** via `CascadeType` enum:
+
+| Cascade Type | Description                                                              |
+| ------------ | ------------------------------------------------------------------------ |
+| `PERSIST`    | When you save the parent, the child is also saved.                       |
+| `MERGE`      | When you merge the parent, the child is also merged.                     |
+| `REMOVE`     | When you delete the parent, the child is also deleted.                   |
+| `REFRESH`    | When you refresh the parent, the child is also refreshed.                |
+| `DETACH`     | When you detach the parent from the session, the child is also detached. |
+| `ALL`        | Applies all of the above.                                                |
+
+---
+
+### ✅ Example
+
+#### 👨‍👩‍👧 Parent–Child Example
+
+```java
+@Entity
+public class User {
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    private String name;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL) // <- cascade here
+    private List<Post> posts = new ArrayList<>();
+}
+```
+
+```java
+@Entity
+public class Post {
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    private String title;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+}
+```
+
+#### Usage:
+
+```java
+User user = new User();
+user.setName("Mohammad");
+
+Post post1 = new Post();
+post1.setTitle("First post");
+post1.setUser(user);
+
+user.getPosts().add(post1);
+
+session.save(user); // Because of cascade, post1 is also saved automatically
+```
+
+Without cascade, you'd have to save the post manually:
+
+```java
+session.save(post1);
+```
+
+---
+
+### 🚫 Be Careful with CascadeType.REMOVE
+
+If you use `CascadeType.REMOVE`, deleting the parent will **also delete all children**. This may cause **accidental data loss** if not intended.
+
+---
+
+### ✅ Summary
+
+| Without Cascade                  | With Cascade                                        |
+| -------------------------------- | --------------------------------------------------- |
+| Save parent, then child manually | Save parent → child is saved automatically          |
+| Remove parent only               | Remove parent → child also removed (if cascade set) |
+
+---
+
+Let me know if you’d like a diagram or code demo for it!
