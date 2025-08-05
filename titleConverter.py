@@ -58,7 +58,7 @@ def create_code_exercise(section_title, part_title):
 section_title = "Section 8: New - Spring MVC Security"
 # section_title = "coding-exercises"
 
-part_title = "282. Spring MVC Security - JDBC Authentication - Custom Tables - Coding - Part 2"
+part_title = "283. FAQ: Spring MVC Security - Custom Tables with JPA/Hibernate"
 print(f"export PART_TITLE='{part_title }'")
 
 prepare_resources(section_title, part_title)
