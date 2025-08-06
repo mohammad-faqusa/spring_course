@@ -7,7 +7,6 @@ import org.springframework.data.repository.cdi.Eager;
 @Table(name="instructor_detail")
 public class InstructorDetail {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
