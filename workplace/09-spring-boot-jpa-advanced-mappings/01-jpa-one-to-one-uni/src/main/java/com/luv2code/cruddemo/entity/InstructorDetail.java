@@ -3,7 +3,7 @@ package com.luv2code.cruddemo.entity;
 import jakarta.persistence.*;
 import org.springframework.data.repository.cdi.Eager;
 
-@Eager
+@Entity
 @Table(name="instructor_detail")
 public class InstructorDetail {
 
