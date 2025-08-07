@@ -19,7 +19,7 @@ public class CruddemoApplication {
     public CommandLineRunner commandLineRunner(AppDAO theAppDAO) {
 
         return runner -> {
-            createInstructor(theAppDAO);
+//            createInstructor(theAppDAO);
 //            findInstructor(theAppDAO);
 //            deleteInstructor(theAppDAO);
 //            findInstructorDetail(theAppDAO);
@@ -28,7 +28,7 @@ public class CruddemoApplication {
     }
 
     private void deleteInstructorDetail(AppDAO theAppDAO) {
-        int theId = 3;
+        int theId = 2;
         System.out.println("Delete instructor detail by id: " + theId);
         theAppDAO.deleteInstructorDetailById(theId);
         System.out.println("Done!");
