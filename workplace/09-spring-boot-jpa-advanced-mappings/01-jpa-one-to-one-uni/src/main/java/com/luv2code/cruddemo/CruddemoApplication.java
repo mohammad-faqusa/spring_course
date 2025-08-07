@@ -11,10 +11,10 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class CruddemoApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(CruddemoApplication.class, args);
-	}
-    
+    public static void main(String[] args) {
+        SpringApplication.run(CruddemoApplication.class, args);
+    }
+
     @Bean
     public CommandLineRunner commandLineRunner(AppDAO theAppDAO) {
 
@@ -25,11 +25,18 @@ public class CruddemoApplication {
 
     private void createInstructor(AppDAO theAppDAO) {
 
+//        // create instructor detail
+//        InstructorDetail theInstructorDetail = new InstructorDetail("mohammadfaqusa9", "Programming");
+//
+//        // create instructor
+//        Instructor theInstructor = new Instructor("Mohammad", "Faqusa" , "mohammad@g.com");
+
         // create instructor detail
-        InstructorDetail theInstructorDetail = new InstructorDetail("mohammadfaqusa9", "Programming");
+        InstructorDetail theInstructorDetail = new InstructorDetail("CleaR", "Gaming");
 
         // create instructor
-        Instructor theInstructor = new Instructor("Mohammad", "Faqusa" , "mohammad@g.com");
+        Instructor theInstructor = new Instructor("CleaR", "Faqusa", "clear@g.com");
+
 
         // associate
         theInstructor.setInstructorDetail(theInstructorDetail);
