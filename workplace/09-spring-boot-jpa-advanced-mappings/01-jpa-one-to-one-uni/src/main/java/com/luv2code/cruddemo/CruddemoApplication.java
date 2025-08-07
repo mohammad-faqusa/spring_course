@@ -1,5 +1,8 @@
 package com.luv2code.cruddemo;
 
+import com.luv2code.cruddemo.dao.AppDAO;
+import com.luv2code.cruddemo.entity.Instructor;
+import com.luv2code.cruddemo.entity.InstructorDetail;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,10 +16,27 @@ public class CruddemoApplication {
 	}
     
     @Bean
-    public CommandLineRunner commandLineRunner() {
+    public CommandLineRunner commandLineRunner(AppDAO theAppDAO) {
 
         return runner -> {
-            System.out.println("Hello World");
+            createInstructor(theAppDAO);
         };
+    }
+
+    private void createInstructor(AppDAO theAppDAO) {
+
+        // create instructor detail
+        InstructorDetail theInstructorDetail = new InstructorDetail("mohammadfaqusa9", "Programming");
+
+        // create instructor
+        Instructor theInstructor = new Instructor("Mohammad", "Faqusa" , "mohammad@g.com");
+
+        // associate
+        theInstructor.setInstructorDetail(theInstructorDetail);
+
+        // save the instructor
+        System.out.println("Saving the instructor: " + theInstructor);
+        theAppDAO.save(theInstructor);
+        System.out.println("Done!");
     }
 }
