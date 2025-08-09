@@ -23,8 +23,25 @@ public class CruddemoApplication {
 //            findInstructor(theAppDAO);
 //            deleteInstructor(theAppDAO);
 //            findInstructorDetail(theAppDAO);
-            deleteInstructorDetail(theAppDAO);
+//            deleteInstructorDetail(theAppDAO);
+            createInstructorWithCourse(theAppDAO);
         };
+
+    }
+
+    private void createInstructorWithCourse(AppDAO theAppDAO) {
+
+        // create instructor detail
+        InstructorDetail theInstructorDetail = new InstructorDetail("General", "Gaming");
+
+        // create instructor
+        Instructor theInstructor = new Instructor("Faqusa", "Faqusa", "clear@g.com");
+
+
+        // associate
+        theInstructor.setInstructorDetail(theInstructorDetail);
+
+
     }
 
     private void deleteInstructorDetail(AppDAO theAppDAO) {

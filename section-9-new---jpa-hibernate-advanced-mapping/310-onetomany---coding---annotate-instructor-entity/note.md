@@ -1,9 +1,11 @@
+## 310. @OneToMany - Coding - Annotate Instructor entity
+
+#### step 3 : update instructor class 
+
+```java
 package com.luv2code.cruddemo.entity;
 
 import jakarta.persistence.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name="instructor")
@@ -26,27 +28,27 @@ public class Instructor {
     @OneToOne(cascade=CascadeType.ALL)
     @JoinColumn(name="instructor_detail_id")
     private InstructorDetail instructorDetail;
-
+    
     @OneToMany(mappedBy="instructor", cascade = {
-            CascadeType.PERSIST,
-            CascadeType.MERGE,
-            CascadeType.DETACH,
+            CascadeType.PERSIST, 
+            CascadeType.MERGE, 
+            CascadeType.DETACH, 
             CascadeType.REFRESH
     })
-    private List<Course> courses;
-
+    private List<Course> courses; 
+    
     // GENERATE GETTERS/SETTERS 
-
+    
     // add convenience methods for bi-directional relationship 
     public void add(Course tempCourse) {
-
+        
         if(courses == null) {
-            courses = new ArrayList<>();
+            courses = new ArrayList<>(); 
         }
-
-        courses.add(tempCourse);
-
-        tempCourse.setInstructor(this);
+        
+        courses.add(tempCourse); 
+        
+        tempCourse.setInstructor(this); 
     }
 
     public Instructor() {
@@ -98,13 +100,6 @@ public class Instructor {
         this.instructorDetail = instructorDetail;
     }
 
-    public List<Course> getCourses() {
-        return courses;
-    }
-
-    public void setCourses(List<Course> courses) {
-        this.courses = courses;
-    }
 
     @Override
     public String toString() {
@@ -117,3 +112,5 @@ public class Instructor {
                 '}';
     }
 }
+
+```
