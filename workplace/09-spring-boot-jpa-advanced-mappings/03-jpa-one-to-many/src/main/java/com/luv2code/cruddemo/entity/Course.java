@@ -20,7 +20,7 @@ public class Course {
             CascadeType.REFRESH,
             CascadeType.DETACH
     })
-    @JoinColumn(name="instructor")
+    @JoinColumn(name="instructor_id")
     private Instructor instructor;
 
     public Course() {

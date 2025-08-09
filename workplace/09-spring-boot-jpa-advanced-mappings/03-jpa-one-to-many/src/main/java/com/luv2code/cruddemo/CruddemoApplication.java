@@ -1,6 +1,7 @@
 package com.luv2code.cruddemo;
 
 import com.luv2code.cruddemo.dao.AppDAO;
+import com.luv2code.cruddemo.entity.Course;
 import com.luv2code.cruddemo.entity.Instructor;
 import com.luv2code.cruddemo.entity.InstructorDetail;
 import org.springframework.boot.CommandLineRunner;
@@ -41,6 +42,20 @@ public class CruddemoApplication {
         // associate
         theInstructor.setInstructorDetail(theInstructorDetail);
 
+        Course tempCourse1 = new Course("Air Guitar - The Ultimate Guide");
+        Course tempCourse2 = new Course("The Pinball Masterclass");
+
+        // add courses to instructor
+        theInstructor.add(tempCourse1);
+        theInstructor.add(tempCourse2);
+
+        //save the instructor
+
+        System.out.println("Saving instructor: " + theInstructor);
+        System.out.println("The courses: " + theInstructor.getCourses());
+        theAppDAO.save(theInstructor);
+
+        System.out.println("Done!");
 
     }
 

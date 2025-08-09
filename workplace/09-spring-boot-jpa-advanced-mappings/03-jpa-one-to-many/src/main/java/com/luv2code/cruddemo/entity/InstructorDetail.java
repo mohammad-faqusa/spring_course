@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import org.springframework.data.repository.cdi.Eager;
 
 @Entity
-@Table(name="instructor_detail")
+@Table(name="instructor_detail", schema="hb-03-one-to-many")
 public class InstructorDetail {
 
     @Id
