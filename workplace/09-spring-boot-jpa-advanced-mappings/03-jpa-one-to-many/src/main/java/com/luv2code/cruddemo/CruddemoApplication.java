@@ -29,10 +29,26 @@ public class CruddemoApplication {
 //            deleteInstructorDetail(theAppDAO);
 //            createInstructorWithCourse(theAppDAO);
 //            findInstructorWithCourse(theAppDAO);
-            updateInstructor(theAppDAO);
+//            updateInstructor(theAppDAO);
+            updateCourse(theAppDAO);
 
         };
 
+    }
+
+    private void updateCourse(AppDAO theAppDAO) {
+
+        int theId = 2;
+
+        System.out.println("Find course by id: " + theId);
+
+        Course tempCourse = theAppDAO.findCourseById(theId);
+
+        tempCourse.setTitle("The Pinball Masterclass - Updated");
+
+        theAppDAO.update(tempCourse);
+
+        System.out.println("Done!");
     }
 
     private void updateInstructor(AppDAO theAppDAO) {
