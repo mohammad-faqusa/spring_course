@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="course", schema="hb-03-one-to-many")
+@Table(name="course")
 public class Course {
 
     @Id

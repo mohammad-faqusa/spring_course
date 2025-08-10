@@ -10,14 +10,14 @@ public class Review {
     @Column(name="id")
     private int id;
 
-    @Column(name="title")
-    private String title;
+    @Column(name="comment")
+    private String comment;
 
     public Review() {
     }
 
     public Review(String title) {
-        this.title = title;
+        this.comment = title;
     }
 
     public int getId() {
@@ -29,18 +29,18 @@ public class Review {
     }
 
     public String getTitle() {
-        return title;
+        return comment;
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        this.comment = title;
     }
 
     @Override
     public String toString() {
         return "Review{" +
                 "id=" + id +
-                ", title='" + title + '\'' +
+                ", title='" + comment + '\'' +
                 '}';
     }
 }
