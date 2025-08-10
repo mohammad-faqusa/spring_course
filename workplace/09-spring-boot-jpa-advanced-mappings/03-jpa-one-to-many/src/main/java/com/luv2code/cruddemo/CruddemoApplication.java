@@ -28,8 +28,6 @@ public class CruddemoApplication {
 //            createInstructorWithCourse(theAppDAO);
             findInstructorWithCourse(theAppDAO);
         };
-
-
     }
 
     private void findInstructorWithCourse(AppDAO theAppDAO) {
