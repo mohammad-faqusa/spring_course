@@ -36,12 +36,12 @@ public class CruddemoApplication {
 
         int theId = 1;
         System.out.println("Find instructor by id: " + theId);
-        Instructor theInstructor = theAppDAO.findInstructorById(theId);
+        Instructor theInstructor = theAppDAO.findInstructorWithCoursesByIdJoinFetch(theId);
         System.out.println("Found instructor: " + theInstructor);
 //        System.out.println("The associated courses: " + theInstructor.getCourses());
 
-        List<Course> theCourses = theAppDAO.findCoursesByInstructorId(theId);
-        System.out.println("The associated courses: " + theCourses);
+//        List<Course> theCourses = theAppDAO.findCoursesByInstructorId(theId);
+        System.out.println("The associated courses: " + theInstructor.getCourses());
         System.out.println("Done!");
     }
 
