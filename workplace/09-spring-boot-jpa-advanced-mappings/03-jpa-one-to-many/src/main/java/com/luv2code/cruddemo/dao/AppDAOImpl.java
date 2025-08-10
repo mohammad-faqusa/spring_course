@@ -37,6 +37,7 @@ public class AppDAOImpl implements AppDAO {
     }
 
     @Override
+    @Transactional
     public InstructorDetail findInstructorDetailById(int theId) {
         return entityManger.find(InstructorDetail.class, theId);
     }
