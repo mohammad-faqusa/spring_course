@@ -24,16 +24,24 @@ public class CruddemoApplication {
         return runner -> {
 //            createInstructor(theAppDAO);
 //            findInstructor(theAppDAO);
-            deleteInstructor(theAppDAO);
+//            deleteInstructor(theAppDAO);
 //            findInstructorDetail(theAppDAO);
 //            deleteInstructorDetail(theAppDAO);
 //            createInstructorWithCourse(theAppDAO);
 //            findInstructorWithCourse(theAppDAO);
 //            updateInstructor(theAppDAO);
 //            updateCourse(theAppDAO);
+            deleteCourse(theAppDAO);
 
         };
 
+    }
+
+    private void deleteCourse(AppDAO theAppDAO) {
+        int theId = 2;
+        System.out.println("Delete course by id: " + theId);
+        theAppDAO.deleteCourseById(theId);
+        System.out.println("Done!");
     }
 
     private void updateCourse(AppDAO theAppDAO) {

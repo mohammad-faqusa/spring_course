@@ -28,4 +28,6 @@ public interface AppDAO {
 
     void update(Course theCourse);
 
+    void deleteCourseById(int theId);
+
 }
