@@ -28,8 +28,24 @@ public class CruddemoApplication {
 //            findInstructorDetail(theAppDAO);
 //            deleteInstructorDetail(theAppDAO);
 //            createInstructorWithCourse(theAppDAO);
-            findInstructorWithCourse(theAppDAO);
+//            findInstructorWithCourse(theAppDAO);
+            updateInstructor(theAppDAO);
+
         };
+
+    }
+
+    private void updateInstructor(AppDAO theAppDAO) {
+        int theId = 1;
+        System.out.println("Find instructor by id: " + theId);
+        Instructor theInstructor = theAppDAO.findInstructorById(theId);
+        System.out.println("Found instructor: " + theInstructor);
+
+        theInstructor.setEmail("mohammad@gentool.com");
+
+        theAppDAO.update(theInstructor);
+
+        System.out.println("Done!");
     }
 
     private void findInstructorWithCourse(AppDAO theAppDAO) {
