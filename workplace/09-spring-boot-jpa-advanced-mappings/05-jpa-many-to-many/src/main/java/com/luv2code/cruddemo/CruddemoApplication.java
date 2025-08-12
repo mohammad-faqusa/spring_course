@@ -1,10 +1,7 @@
 package com.luv2code.cruddemo;
 
 import com.luv2code.cruddemo.dao.AppDAO;
-import com.luv2code.cruddemo.entity.Course;
-import com.luv2code.cruddemo.entity.Instructor;
-import com.luv2code.cruddemo.entity.InstructorDetail;
-import com.luv2code.cruddemo.entity.Review;
+import com.luv2code.cruddemo.entity.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -24,8 +21,42 @@ public class CruddemoApplication {
 
         return runner -> {
 
+//            createCourseAndStudents(theAppDAO);
+            findCourseAndStudents(theAppDAO);
         };
 
+    }
+
+    private void findCourseAndStudents(AppDAO theAppDAO) {
+
+        int theId = 1;
+        System.out.println("find the course with id  : " + theId);
+
+        // find the course
+        Course tempCourse = theAppDAO.findcourseAndStudentsByCourseId(theId);
+
+        // print the course
+        System.out.println("The course " + tempCourse);
+
+        // print the associated students
+        System.out.println("The students : " + tempCourse.getStudents());
+    }
+
+    private void createCourseAndStudents(AppDAO theAppDAO) {
+
+        // create the course
+        Course tempCourse = new Course("How to get billion scores");
+
+        // create the students and add students to the course
+        tempCourse.addStudent(new Student("Mohammad", "Faqusa", "mohammad@g.com"));
+        tempCourse.addStudent(new Student("Ahmad", "Faqusa", "ahmad@g.com"));
+        tempCourse.addStudent(new Student("Ali", "Faqusa", "ali@g.com"));
+
+        // save the course with the associated students
+        theAppDAO.save(tempCourse);
+
+        // done
+        System.out.println("Course created successfully with Students association");
     }
 
     private void findCourseWithReviews(AppDAO theAppDAO) {

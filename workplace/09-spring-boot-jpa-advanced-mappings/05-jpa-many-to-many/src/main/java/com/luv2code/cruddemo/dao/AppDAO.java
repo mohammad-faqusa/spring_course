@@ -34,4 +34,7 @@ public interface AppDAO {
 
     Course findCourseWithReviewsByCourseId(int theId);
 
+    Course findcourseAndStudentsByCourseId(int theId);
+
+
 }
