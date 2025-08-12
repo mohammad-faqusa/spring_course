@@ -23,10 +23,27 @@ public class CruddemoApplication {
 
 //            createCourseAndStudents(theAppDAO);
 //            findCourseAndStudents(theAppDAO);
-            findStudentAndCourses(theAppDAO);
+//            findStudentAndCourses(theAppDAO);
+            addMoreCoursesForStudent(theAppDAO);
         };
 
 
+    }
+
+    private void addMoreCoursesForStudent(AppDAO theAppDAO) {
+        int theId = 1 ;
+
+        Student tempStudent = theAppDAO.findStudentAndCoursesByStudentId(theId);
+
+        tempStudent.addCourse(new Course("100 days of python"));
+        tempStudent.addCourse(new Course("100 days of spring boot"));
+
+        System.out.println("The student  : " +  tempStudent);
+        System.out.println("The associated courses : " + tempStudent.getCourses());
+
+        theAppDAO.save(tempStudent);
+
+        System.out.println("Done!");
     }
 
     private void findStudentAndCourses(AppDAO theAppDAO) {
