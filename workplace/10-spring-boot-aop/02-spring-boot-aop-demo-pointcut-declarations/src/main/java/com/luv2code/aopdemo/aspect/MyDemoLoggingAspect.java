@@ -9,32 +9,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class MyDemoLoggingAspect {
 
-    @Pointcut("execution(* com.luv2code.aopdemo.dao.*.*(..))")
-    public void forDaoPackage(){}
-
-    @Pointcut("execution(* com.luv2code.aopdemo.dao.*.get*(..))")
-    public void getter(){}
-
-    @Pointcut("execution(* com.luv2code.aopdemo.dao.*.set*(..))")
-    public void setter(){}
-
-    @Pointcut("forDaoPackage() && !(getter() || setter())")
-    public void forDaoPackageNoGetterSetter(){}
-
-    @Before("forDaoPackageNoGetterSetter()")
+    @Before("LuvAopExpressions.forDaoPackageNoGetterSetter()")
     public void beforeAddAccount() {
         System.out.println("====>>> Execution BEFORE ADD ACCOUNT ");
     }
-
-    @Before("forDaoPackageNoGetterSetter()")
-    public void beforeApiAnalytics() {
-        System.out.println("====>>> Execution Api Analytics ");
-    }
-
-    @Before("forDaoPackageNoGetterSetter()")
-    public void LogToCloudAsync() {
-        System.out.println("====>>> Execution Cloud Async Log");
-    }
-
 
 }
