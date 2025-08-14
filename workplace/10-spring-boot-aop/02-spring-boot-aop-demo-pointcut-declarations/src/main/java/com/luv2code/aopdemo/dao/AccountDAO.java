@@ -7,4 +7,12 @@ public interface AccountDAO {
     void addAccount(Account theAccount, boolean vipFlag);
 
     void addWork();
+
+    public String getName();
+
+    public void setName(String name);
+
+    public String getService();
+
+    public void setService(String service);
 }

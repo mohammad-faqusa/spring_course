@@ -32,6 +32,13 @@ public class AopdemoApplication {
         accountDAO.addAccount(theAccount, true);
         accountDAO.addWork();
 
+        // getters and setters
+
+        accountDAO.setName("Mohammad");
+        accountDAO.setService("Programming");
+        accountDAO.getName();
+        accountDAO.getService();
+
         membershipDAO.addSilly();
         membershipDAO.goToSleep();
 
