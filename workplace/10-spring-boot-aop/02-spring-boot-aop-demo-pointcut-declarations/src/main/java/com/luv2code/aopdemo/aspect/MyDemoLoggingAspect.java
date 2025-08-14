@@ -29,10 +29,13 @@ public class MyDemoLoggingAspect {
         // get the accounts
         System.out.println("AfterReturning accounts : " + result);
 
-        if(!result.isEmpty()) {
-            Account tempAccount =  result.get(0);
-            tempAccount.setName("Daffy duff");
+        // loop through the accounts
+        for(Account account:result){
+            // convert the name to uppercase
+            account.setName(account.getName().toUpperCase());
         }
+
+
 
     }
 
