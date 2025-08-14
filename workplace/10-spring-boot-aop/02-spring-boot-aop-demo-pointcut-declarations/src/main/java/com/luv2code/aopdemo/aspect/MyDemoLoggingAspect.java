@@ -2,17 +2,38 @@ package com.luv2code.aopdemo.aspect;
 
 import com.luv2code.aopdemo.Account;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import java.sql.Time;
 import java.util.List;
 
 @Aspect
 @Component
 @Order(2)
 public class MyDemoLoggingAspect {
+
+    @Around("execution(* com.luv2code.aopdemo.dao.AccountDAO.findAccounts(..))")
+    public Object logAroundAdvice(ProceedingJoinPoint pjp) throws Throwable {
+
+        // time begin
+        long begin = System.currentTimeMillis();
+
+        // executing the function
+        Object result = pjp.proceed();
+
+        long end = System.currentTimeMillis();
+
+        long duration = end - begin;
+
+        System.out.println("Measured method : " + pjp.getSignature().toShortString());
+        System.out.println("\n========> Duration : " + duration + " milliseconds");
+
+        return result;
+    }
 
     @After("execution(* com.luv2code.aopdemo.dao.AccountDAO.findAccounts(..))")
     public void logAfterAdvice(JoinPoint joinPoint) {
