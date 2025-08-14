@@ -2,13 +2,17 @@ package com.luv2code.aopdemo.aspect;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
 public class MyDemoLoggingAspect {
 
-    @Before("execution(* com.luv2code.aopdemo.dao.*.*(..))")
+    @Pointcut("execution(* com.luv2code.aopdemo.dao.*.*(..))")
+    public void forDaoPackage(){}
+
+    @Before("forDaoPackage()")
     public void beforeAddAccount() {
         System.out.println("====>>> Execution BEFORE ADD ACCOUNT ");
     }
