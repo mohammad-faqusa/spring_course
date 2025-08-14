@@ -28,6 +28,8 @@ public class AopdemoApplication {
     private void demoTheBeforeAdvice(AccountDAO accountDAO, MembershipDAO membershipDAO) {
 
         Account theAccount = new Account();
+        theAccount.setName("John Doe");
+        theAccount.setEmail("john@gmail.com");
 
         accountDAO.addAccount(theAccount, true);
         accountDAO.addWork();
