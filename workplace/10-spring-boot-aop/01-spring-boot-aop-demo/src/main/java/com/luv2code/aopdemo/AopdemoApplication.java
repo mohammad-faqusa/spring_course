@@ -29,7 +29,7 @@ public class AopdemoApplication {
 
         Account theAccount = new Account();
 
-        accountDAO.addAccount(theAccount);
+        accountDAO.addAccount(theAccount, true);
 
         membershipDAO.addSilly();
 
