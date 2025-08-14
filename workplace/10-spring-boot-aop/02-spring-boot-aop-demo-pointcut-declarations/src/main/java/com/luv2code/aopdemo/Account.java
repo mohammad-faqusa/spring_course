@@ -6,6 +6,14 @@ public class Account {
 
     private String email;
 
+    public Account() {
+    }
+
+    public Account(String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
+
     public String getName() {
         return name;
     }
