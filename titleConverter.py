@@ -58,7 +58,7 @@ def create_code_exercise(section_title, part_title):
 section_title = "Section 10: New - AOP: Aspect-Oriented Programming"
 # section_title = "coding-exercises"
 
-part_title = "366. AOP - Pointcut Expressions - Coding - Match Method with Any Params"
+part_title = "367. AOP - Pointcut Expressions - Coding - Match Any Method in a Package"
 print(f"export PART_TITLE='{part_title }'")
 
 prepare_resources(section_title, part_title)
