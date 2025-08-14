@@ -58,7 +58,7 @@ def create_code_exercise(section_title, part_title):
 section_title = "Section 10: New - AOP: Aspect-Oriented Programming"
 # section_title = "coding-exercises"
 
-part_title = "380. AOP: Read Method Arguments with JoinPoints - Coding - Part 2"
+part_title = "381. AOP: Progress Check"
 print(f"export PART_TITLE='{part_title }'")
 
 prepare_resources(section_title, part_title)
