@@ -32,8 +32,8 @@ public class MyDemoLoggingAspect {
             // log the exception
             System.out.println("aroundGetFortune exception : " + e);
 
-            // send back to customer
-            result = "We have a major accident, but no worries, the delivery is coming!";
+            // rethrow
+            throw e;
         }
 
 
