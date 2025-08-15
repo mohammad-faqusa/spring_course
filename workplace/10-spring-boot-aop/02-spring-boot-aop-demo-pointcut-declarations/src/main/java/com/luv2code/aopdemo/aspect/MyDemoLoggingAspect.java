@@ -16,6 +16,25 @@ import java.util.List;
 @Order(2)
 public class MyDemoLoggingAspect {
 
+    @Around("execution(* com.luv2code.aopdemo.services.TrafficFortuneService.getFortune(..))")
+    public Object aroundGetFortune(ProceedingJoinPoint pjp) throws Throwable {
+
+        // time begin
+        long begin = System.currentTimeMillis();
+
+        // executing the function
+        Object result = pjp.proceed();
+
+        long end = System.currentTimeMillis();
+
+        long duration = end - begin;
+
+        System.out.println("Measured method ("+ pjp.getSignature().toShortString() +")");
+        System.out.println("\n========> Duration : " + duration + " milliseconds");
+
+        return result;
+    }
+
     @Around("execution(* com.luv2code.aopdemo.dao.AccountDAO.findAccounts(..))")
     public Object logAroundAdvice(ProceedingJoinPoint pjp) throws Throwable {
 
