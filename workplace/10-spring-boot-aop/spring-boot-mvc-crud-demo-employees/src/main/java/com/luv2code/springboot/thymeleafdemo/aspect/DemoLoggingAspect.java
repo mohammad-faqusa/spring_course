@@ -35,6 +35,12 @@ public class DemoLoggingAspect {
 
         myLogger.info("========>> in @Before, calling method: " + theMethod);
 
+        Object [] args =  joinPoint.getArgs();
+
+        for (Object arg : args) {
+            myLogger.info("=======>> in @Before, arguments : " + arg);
+        }
+
     }
 
 
