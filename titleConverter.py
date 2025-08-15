@@ -58,7 +58,7 @@ def create_code_exercise(section_title, part_title):
 section_title = "Section 10: New - AOP: Aspect-Oriented Programming"
 # section_title = "coding-exercises"
 
-part_title = "402. AOP: Integrating AOP with Spring MVC CRUD App - Coding - Part 1"
+part_title = "403. AOP: Integrating AOP with Spring MVC CRUD App - Coding - Part 2"
 print(f"export PART_TITLE='{part_title }'")
 
 prepare_resources(section_title, part_title)
