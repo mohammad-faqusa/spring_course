@@ -20,17 +20,29 @@ public class MyDemoLoggingAspect {
     public Object aroundGetFortune(ProceedingJoinPoint pjp) throws Throwable {
 
         // time begin
-        long begin = System.currentTimeMillis();
+        long begin = System.nanoTime();
 
         // executing the function
-        Object result = pjp.proceed();
+        Object result = null;
 
-        long end = System.currentTimeMillis();
+        try{
+            result = pjp.proceed();
+        } catch (Exception e) {
+
+            // log the exception
+            System.out.println("aroundGetFortune exception : " + e);
+
+            // send back to customer
+            result = "We have a major accident, but no worries, the delivery is coming!";
+        }
+
+
+        long end = System.nanoTime();
 
         long duration = end - begin;
 
         System.out.println("Measured method ("+ pjp.getSignature().toShortString() +")");
-        System.out.println("\n========> Duration : " + duration + " milliseconds");
+        System.out.println("\n========> Duration : " + duration + " nano seconds");
 
         return result;
     }
